@@ -1,0 +1,67 @@
+bot:
+  locations:
+    remote:
+      displayName: "Remote"
+      enabledAsGroup: false
+      additionalUsers: []
+      admins:
+        - U01THB38EDV
+    wellington:
+      displayName: "NZ: Wellington"
+      enabledAsGroup: false
+      additionalUsers: []
+      admins: []
+    hamilton:
+      displayName: "HZ: Hamilton"
+      enabledAsGroup: false
+      additionalUsers: []
+      admins:
+        - U01THB38EDV
+    gisborne:
+      displayName: "NZ: Gisborne"
+      enabledAsGroup: false
+      additionalUsers:
+        - U01THB38EDV
+      admins: []
+
+  groups:
+    worldwide:
+      displayName: "Worldwide"
+      enabled: true
+      additionalUsers: []
+      admins:
+        - U01THB38EDV
+    eng_boardgames:
+      displayName: "ENG: boardgames"
+      enabled: true
+      additionalUsers: []
+      admins:
+        - U4BSUSM5Z
+    eng_data_analytics:
+      displayName: "ENG: Data Analytics"
+      enabled: true
+      additionalUsers: []
+      admins:
+        - U4BSUSM5Z
+        - U02E7A02DDH
+
+database:
+  host: mysql
+  port: 3306
+  db: coffee
+  username: root
+
+daemons:
+  week:
+    poolPeriod: 3600 # 1h
+
+notifications:
+  dryRun: false
+
+devMode:
+  enabled: false
+  weekday: 5
+  hour: 19
+
+log:
+  rotation: "1 week"
