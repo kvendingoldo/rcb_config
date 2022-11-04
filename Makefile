@@ -17,7 +17,7 @@ help: ## Display this help.
 upload: ## Upload files into VM w/o launch
 	ssh -i $(SSH_KEY_PATH) $(RCB_USER)@$(RCB_HOST) 'mkdir -p $(BOT_HOME)/sql/ $(BOT_HOME)/resources/ $(BOT_HOME)/mysql_data/ $(BOT_HOME)/logs/'
 	scp -i $(SSH_KEY_PATH) config.yml $(RCB_USER)@$(RCB_HOST):$(BOT_HOME)/resources/config.yml
-	git clone --depth 1 --branch $(BOT_VERSION) git@github.com:kvendingoldo/random_coffee_slack.git /tmp/rcb
+	git clone --depth 1 --branch $(BOT_VERSION) https://github.com/kvendingoldo/random_coffee_slack.git /tmp/rcb
 	rsync -av -e 'ssh -i $(SSH_KEY_PATH)' /tmp/rcb/admin-tools $(RCB_USER)@$(RCB_HOST):$(BOT_HOME)/
 	scp -i $(SSH_KEY_PATH) /tmp/rcb/docker-compose.yml $(RCB_USER)@$(RCB_HOST):$(BOT_HOME)/docker-compose.yml
 	rm -rf /tmp/rcb
